@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn Quran Tajweed at Home | PKR 2,500 Only</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Lateef:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --g:#B8892A;--gl:#E8C96A;--gd:#7A5C18;--gll:rgba(232,201,106,0.12);
+  --bg:#040C18;--bg2:#071224;--bg3:#0A1830;
+  --txt:#F5F0E8;--muted:#8A9BB5;
+  --wa:#25D366;--wa2:#128C7E;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+/* ─── TICKER ─── */
+.ticker{background:linear-gradient(90deg,var(--gd),var(--g),var(--gd));padding:9px 0;overflow:hidden;position:sticky;top:0;z-index:999;box-shadow:0 1px 0 rgba(232,201,106,0.2);}
+.tk-track{display:flex;gap:80px;animation:tk 35s linear infinite;white-space:nowrap;}
+.tk-item{font-family:'Inter',sans-serif;font-size:10.5px;font-weight:600;color:#040C18;letter-spacing:3px;text-transform:uppercase;display:flex;align-items:center;gap:16px;}
+.tk-sep{width:4px;height:4px;background:#040C18;border-radius:50%;opacity:0.5;}
+@keyframes tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ─── HERO ─── */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse at 25% 40%,#0F2040 0%,#040C18 55%,#020810 100%);}
+.h-geo{position:absolute;inset:0;opacity:1;
+  background-image:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 8L92 50L50 92L8 50Z' fill='none' stroke='%23B8892A' stroke-width='0.2' opacity='0.12'/%3E%3Ccircle cx='50' cy='50' r='28' fill='none' stroke='%23B8892A' stroke-width='0.15' opacity='0.08'/%3E%3C/svg%3E") repeat;}
+
+/* Radial glow */
+.h-glow{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(184,137,42,0.07) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+
+/* Stars */
+.star-dot{position:absolute;background:var(--gl);border-radius:50%;animation:tw 4s ease-in-out infinite;}
+@keyframes tw{0%,100%{opacity:0.06;transform:scale(1)}50%{opacity:0.55;transform:scale(1.4)}}
+
+/* Floating Quran SVGs */
+.fq{position:absolute;opacity:0.4;filter:drop-shadow(0 0 12px rgba(184,137,42,0.4));animation:fq 8s ease-in-out infinite;}
+.fq1{left:2%;top:15%;animation-delay:0s;}
+.fq2{left:7%;top:32%;animation-delay:1.5s;transform:scale(0.55);}
+.fq3{right:2%;top:13%;animation-delay:0.8s;}
+.fq4{right:7%;top:30%;animation-delay:2s;transform:scale(0.55);}
+@keyframes fq{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-14px) rotate(4deg)}}
+
+/* Mosque silhouette */
+.mosque{position:absolute;bottom:0;left:0;width:100%;height:140px;opacity:0.055;pointer-events:none;}
+
+.hero-wrap{position:relative;z-index:5;text-align:center;padding:110px 20px 70px;max-width:860px;margin:0 auto;}
+
+.bism{font-family:'Lateef',serif;font-size:clamp(22px,3.8vw,40px);color:var(--gl);text-shadow:0 0 40px rgba(232,201,106,0.3);margin-bottom:20px;letter-spacing:2px;opacity:0;animation:up 0.9s 0.2s forwards;}
+.h-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(184,137,42,0.35);border-radius:40px;padding:7px 20px;font-size:10px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--gl);margin-bottom:22px;opacity:0;animation:up 0.9s 0.4s forwards;backdrop-filter:blur(4px);}
+.h-badge span{width:5px;height:5px;background:var(--g);border-radius:50%;display:block;}
+
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,10vw,100px);font-weight:700;line-height:0.95;margin-bottom:20px;opacity:0;animation:up 0.9s 0.6s forwards;}
+.h1-sub{display:block;font-size:0.38em;font-weight:400;font-style:italic;color:rgba(245,240,232,0.7);letter-spacing:8px;margin-bottom:8px;}
+.h1-main{display:block;background:linear-gradient(135deg,var(--gll) 0%,var(--gl) 40%,var(--g) 70%,var(--gd) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.h1-tag{display:block;font-size:0.32em;font-weight:400;font-style:italic;color:rgba(245,240,232,0.65);letter-spacing:10px;margin-top:6px;}
+
+.hero-desc{font-size:clamp(14px,1.9vw,17px);color:var(--muted);max-width:520px;margin:0 auto 36px;line-height:1.85;opacity:0;animation:up 0.9s 0.8s forwards;}
+
+/* Laptop visual */
+.lap-wrap{position:relative;width:300px;height:210px;margin:0 auto 30px;perspective:1000px;opacity:0;animation:up 0.9s 1s forwards;}
+.lap{width:100%;height:100%;transform:rotateX(8deg) rotateY(-4deg);animation:lapf 5s ease-in-out infinite;transform-style:preserve-3d;}
+@keyframes lapf{0%,100%{transform:rotateX(8deg) rotateY(-4deg) translateY(0)}50%{transform:rotateX(6deg) rotateY(-2deg) translateY(-12px)}}
+.lap-s{width:272px;height:170px;background:linear-gradient(160deg,#0a1628,#162d58);border-radius:10px 10px 0 0;border:2px solid rgba(184,137,42,0.5);box-shadow:0 0 50px rgba(184,137,42,0.15),inset 0 0 25px rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;margin:0 auto;position:relative;overflow:hidden;}
+.lap-s::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(184,137,42,0.03),transparent,rgba(184,137,42,0.03));animation:lg 3s ease-in-out infinite;}
+@keyframes lg{0%,100%{opacity:0.5}50%{opacity:1}}
+.lap-inner{text-align:center;position:relative;z-index:1;}
+.lap-icon{font-size:48px;display:block;margin-bottom:7px;filter:drop-shadow(0 0 14px rgba(232,201,106,0.7));animation:glow 2.5s ease-in-out infinite;}
+@keyframes glow{0%,100%{filter:drop-shadow(0 0 14px rgba(232,201,106,0.7))}50%{filter:drop-shadow(0 0 30px rgba(232,201,106,1))}}
+.play-ring{width:42px;height:42px;border-radius:50%;border:2px solid var(--g);display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 0 20px rgba(184,137,42,0.4);animation:pr 2s ease-in-out infinite;}
+.play-ring svg{width:15px;height:15px;fill:var(--g);margin-left:2px;}
+@keyframes pr{0%,100%{box-shadow:0 0 20px rgba(184,137,42,0.4)}50%{box-shadow:0 0 40px rgba(184,137,42,0.8)}}
+.lap-b{width:290px;height:11px;background:linear-gradient(180deg,#8B6914,#5A4010);border-radius:0 0 5px 5px;margin:0 auto;}
+.tas{position:absolute;right:-16px;top:14px;font-size:36px;animation:tas 4s ease-in-out infinite;transform-origin:top;}
+@keyframes tas{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(12deg)}}
+
+/* Price */
+.price-row{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;margin:24px 0;opacity:0;animation:up 0.9s 1.1s forwards;}
+.p-old{font-size:17px;color:rgba(245,240,232,0.3);text-decoration:line-through;font-weight:400;}
+.p-new{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,7vw,60px);font-weight:700;background:linear-gradient(135deg,var(--gl),var(--g));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.p-tag{background:#C0392B;color:#fff;font-size:11px;font-weight:700;padding:6px 18px;border-radius:4px;letter-spacing:2px;text-transform:uppercase;animation:pt 1.6s ease-in-out infinite;}
+@keyframes pt{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(192,57,43,0.4)}50%{opacity:0.85;box-shadow:0 0 0 8px rgba(192,57,43,0)}}
+
+/* CTA */
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px;opacity:0;animation:up 0.9s 1.2s forwards;}
+
+.btn-primary{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--wa2),var(--wa));color:#fff;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;padding:16px 44px;border-radius:6px;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:11px;letter-spacing:0.3px;animation:blink 1.4s ease-in-out infinite;transition:transform 0.2s;}
+.btn-primary svg{width:19px;height:19px;fill:#fff;flex-shrink:0;}
+.btn-primary::after{content:'';position:absolute;top:0;left:-80%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);animation:sw 2.5s linear infinite;}
+@keyframes sw{0%{left:-80%}100%{left:140%}}
+@keyframes blink{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,0.4);transform:scale(1)}50%{box-shadow:0 0 0 10px rgba(37,211,102,0);transform:scale(1.02)}}
+.btn-primary:hover{transform:translateY(-2px) scale(1.03) !important;}
+
+.btn-outline{background:transparent;color:var(--gl);font-family:'Inter',sans-serif;font-size:14px;font-weight:500;padding:16px 38px;border-radius:6px;border:1px solid rgba(184,137,42,0.3);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all 0.3s;letter-spacing:0.2px;}
+.btn-outline svg{width:18px;height:18px;fill:var(--gl);flex-shrink:0;transition:fill 0.3s;}
+.btn-outline:hover{background:rgba(184,137,42,0.08);border-color:var(--g);color:var(--g);transform:translateY(-2px);}
+.btn-outline:hover svg{fill:var(--g);}
+
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes dn{from{opacity:0;transform:translateY(-22px)}to{opacity:1;transform:translateY(0)}}
+
+/* ─── TRUST BAR ─── */
+.trust-bar{background:var(--bg2);border-top:1px solid rgba(184,137,42,0.1);border-bottom:1px solid rgba(184,137,42,0.1);padding:28px 20px;}
+.trust-inner{max-width:900px;margin:0 auto;display:flex;justify-content:center;align-items:center;gap:50px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:12px;}
+.trust-item svg{width:22px;height:22px;stroke:var(--g);stroke-width:1.8;fill:none;flex-shrink:0;}
+.trust-item strong{font-size:20px;font-weight:700;color:var(--gl);font-family:'Cormorant Garamond',serif;}
+.trust-item span{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;display:block;margin-top:1px;}
+
+/* ─── COUNTDOWN ─── */
+.cd{background:var(--bg);padding:52px 20px;text-align:center;border-bottom:1px solid rgba(184,137,42,0.08);}
+.cd-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--g);margin-bottom:26px;font-weight:600;}
+.cd-boxes{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+.cd-box{min-width:90px;padding:18px 20px;background:var(--bg3);border:1px solid rgba(184,137,42,0.15);border-radius:8px;position:relative;transition:border-color 0.3s;}
+.cd-box:hover{border-color:rgba(184,137,42,0.35);}
+.cd-box::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,var(--g),transparent);}
+.cd-n{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:700;background:linear-gradient(135deg,var(--gl),var(--g));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1.05;}
+.cd-l{font-size:9px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-top:5px;font-weight:600;}
+
+/* ─── SECTION COMMON ─── */
+.sec{padding:90px 20px;}
+.sec-hd{text-align:center;margin-bottom:60px;}
+.sec-ar{font-family:'Lateef',serif;font-size:28px;color:var(--g);display:block;margin-bottom:6px;opacity:0.8;}
+.sec-hd h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4.5vw,46px);font-weight:600;color:var(--txt);margin-bottom:12px;line-height:1.2;}
+.sec-hd h2 em{color:var(--gl);font-style:italic;}
+.sec-hd p{font-size:15px;color:var(--muted);max-width:480px;margin:0 auto;line-height:1.8;}
+.divider{width:50px;height:1px;background:linear-gradient(90deg,transparent,var(--g),transparent);margin:16px auto;}
+
+/* ─── WHY / BENEFITS ─── */
+.why{background:var(--bg2);}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;max-width:1100px;margin:0 auto;}
+.why-card{background:var(--bg3);padding:36px 30px;position:relative;overflow:hidden;transition:all 0.4s;cursor:default;}
+.why-card::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:linear-gradient(180deg,transparent,var(--g),transparent);transition:height 0.4s;}
+.why-card:hover::before{height:100%;}
+.why-card:hover{background:#0D1F3A;}
+/* circle expand on hover */
+.why-card::after{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:radial-gradient(circle,rgba(184,137,42,0.06),transparent);transform:translate(-50%,-50%);transition:width 0.7s ease,height 0.7s ease;pointer-events:none;}
+.why-card:hover::after{width:500px;height:500px;}
+.wi{width:48px;height:48px;border:1px solid rgba(184,137,42,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:all 0.3s;position:relative;z-index:1;}
+.wi svg{width:22px;height:22px;stroke:var(--g);stroke-width:1.7;fill:none;transition:all 0.3s;}
+.why-card:hover .wi{border-color:var(--g);background:rgba(184,137,42,0.08);}
+.why-card h3{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--txt);margin-bottom:10px;position:relative;z-index:1;}
+.why-card p{font-size:13.5px;color:var(--muted);line-height:1.7;position:relative;z-index:1;}
+
+/* ─── COURSES ─── */
+.courses{background:var(--bg);}
+.course-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1100px;margin:0 auto;}
+.course-card{background:var(--bg3);border:1px solid rgba(184,137,42,0.1);border-radius:12px;padding:0;overflow:hidden;transition:all 0.4s;position:relative;}
+.course-card::after{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:radial-gradient(circle,rgba(184,137,42,0.05),transparent);transform:translate(-50%,-50%);transition:width 0.7s,height 0.7s;pointer-events:none;}
+.course-card:hover::after{width:600px;height:600px;}
+.course-card:hover{border-color:rgba(184,137,42,0.3);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.4);}
+.cc-top{padding:24px 24px 0;}
+.cc-badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:4px;margin-bottom:16px;}
+.cc-badge.free{background:rgba(37,211,102,0.1);color:#25D366;border:1px solid rgba(37,211,102,0.2);}
+.cc-badge.paid{background:rgba(184,137,42,0.1);color:var(--gl);border:1px solid rgba(184,137,42,0.2);}
+.cc-icon{font-size:36px;margin-bottom:12px;display:block;filter:drop-shadow(0 0 8px rgba(232,201,106,0.4));}
+.course-card h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--txt);margin-bottom:8px;line-height:1.3;}
+.course-card p{font-size:13px;color:var(--muted);line-height:1.7;padding:0 24px;}
+.cc-list{list-style:none;margin:16px 24px;border-top:1px solid rgba(184,137,42,0.08);padding-top:16px;}
+.cc-list li{font-size:12.5px;color:var(--muted);padding:5px 0;display:flex;align-items:center;gap:8px;}
+.cc-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--g);flex-shrink:0;}
+.cc-foot{padding:20px 24px 24px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(184,137,42,0.08);margin-top:8px;}
+.cc-price{font-family:'Cormorant Garamond',serif;}
+.cc-price .old{font-size:12px;color:rgba(245,240,232,0.3);text-decoration:line-through;display:block;}
+.cc-price .new{font-size:22px;font-weight:700;background:linear-gradient(135deg,var(--gl),var(--g));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.cc-price .free-tag{font-size:18px;font-weight:700;color:#25D366;}
+.cc-btn{background:linear-gradient(135deg,var(--wa2),var(--wa));color:#fff;font-size:12px;font-weight:600;padding:10px 20px;border-radius:6px;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all 0.3s;white-space:nowrap;animation:blink 1.4s ease-in-out infinite;}
+.cc-btn svg{width:14px;height:14px;fill:#fff;}
+.cc-btn:hover{transform:scale(1.05);}
+.cc-btn.free-btn{background:linear-gradient(135deg,#1a5e2a,#25D366);}
+
+/* ─── URDU SECTION ─── */
+.urdu-sec{background:var(--bg2);border-top:1px solid rgba(184,137,42,0.08);border-bottom:1px solid rgba(184,137,42,0.08);}
+.urdu-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1000px;margin:0 auto;align-items:start;}
+@media(max-width:768px){.urdu-grid{grid-template-columns:1fr;}}
+.urdu-col{direction:rtl;text-align:right;}
+.urdu-h{font-family:'Noto Nastaliq Urdu',serif;font-size:clamp(22px,3.5vw,34px);color:var(--gl);line-height:2;margin-bottom:24px;font-weight:600;}
+.urdu-list{list-style:none;}
+.urdu-list li{font-family:'Noto Nastaliq Urdu',serif;font-size:clamp(14px,1.8vw,18px);color:rgba(245,240,232,0.72);line-height:2.6;padding:8px 0;border-bottom:1px solid rgba(184,137,42,0.07);display:flex;align-items:center;justify-content:flex-end;gap:14px;}
+.urdu-list li::after{content:'';width:6px;height:6px;background:var(--g);border-radius:50%;flex-shrink:0;}
+.urdu-btn{margin-top:26px;display:inline-flex;align-items:center;gap:10px;font-family:'Noto Nastaliq Urdu',serif;font-size:15px;background:linear-gradient(135deg,var(--wa2),var(--wa));color:#fff;padding:14px 28px;border-radius:6px;border:none;cursor:pointer;text-decoration:none;font-weight:600;transition:all 0.3s;animation:blink 1.4s ease-in-out infinite;}
+.urdu-btn:hover{transform:translateY(-2px);}
+.urdu-btn svg{width:18px;height:18px;fill:#fff;}
+
+.acad-side{display:flex;flex-direction:column;gap:20px;}
+.acad-card{background:var(--bg3);border:1px solid rgba(184,137,42,0.15);border-radius:12px;padding:28px;transition:all 0.4s;}
+.acad-card:hover{border-color:rgba(184,137,42,0.3);transform:translateY(-4px);}
+.acad-top{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+.acad-ico{width:50px;height:50px;background:linear-gradient(135deg,var(--gd),var(--g));border-radius:10px;display:flex;align-items:center;justify-content:center;}
+.acad-ico svg{width:24px;height:24px;stroke:#040C18;stroke-width:2;fill:none;}
+.acad-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--txt);}
+.acad-name span{display:block;font-family:'Inter',sans-serif;font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:2px;}
+.acad-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+.a-s{background:rgba(0,0,0,0.25);border-radius:8px;padding:12px;text-align:center;border:1px solid rgba(184,137,42,0.07);transition:border-color 0.3s;}
+.a-s:hover{border-color:rgba(184,137,42,0.25);}
+.a-s .n{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;background:linear-gradient(135deg,var(--gl),var(--g));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.a-s .l{font-size:9.5px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;}
+.acad-desc{font-family:'Noto Nastaliq Urdu',serif;font-size:13px;color:rgba(245,240,232,0.58);line-height:2.3;direction:rtl;text-align:right;margin-bottom:16px;}
+.acad-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--gl);text-decoration:none;border:1px solid rgba(184,137,42,0.25);border-radius:6px;padding:10px 18px;transition:all 0.3s;width:100%;justify-content:center;}
+.acad-link:hover{background:rgba(184,137,42,0.08);border-color:var(--g);color:var(--g);}
+.acad-link svg{width:15px;height:15px;fill:var(--gl);transition:fill 0.3s;}
+.acad-link:hover svg{fill:var(--g);}
+
+/* ─── TESTIMONIALS ─── */
+.testi{background:var(--bg);}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:1100px;margin:0 auto;}
+.t-card{background:var(--bg3);border:1px solid rgba(184,137,42,0.08);border-radius:12px;padding:32px;position:relative;overflow:hidden;transition:all 0.4s;}
+.t-card::after{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:radial-gradient(circle,rgba(184,137,42,0.05),transparent);transform:translate(-50%,-50%);transition:width 0.7s,height 0.7s;pointer-events:none;}
+.t-card:hover::after{width:500px;height:500px;}
+.t-card:hover{border-color:rgba(184,137,42,0.22);transform:translateY(-5px);}
+.t-q{font-family:'Cormorant Garamond',serif;font-size:60px;color:rgba(184,137,42,0.1);line-height:0.8;margin-bottom:12px;display:block;}
+.t-stars{color:var(--g);font-size:14px;letter-spacing:2px;margin-bottom:14px;display:block;}
+.t-card p{font-size:14px;color:rgba(245,240,232,0.68);line-height:1.8;margin-bottom:22px;position:relative;z-index:1;}
+.t-auth{display:flex;align-items:center;gap:12px;position:relative;z-index:1;}
+.t-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gd),var(--g));display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.t-name{font-size:14px;font-weight:600;color:var(--txt);}
+.t-loc{font-size:11px;color:var(--muted);letter-spacing:0.5px;margin-top:1px;}
+
+/* ─── FINAL CTA ─── */
+.final{background:var(--bg2);border-top:1px solid rgba(184,137,42,0.08);padding:100px 20px;text-align:center;position:relative;overflow:hidden;}
+.final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(184,137,42,0.05) 0%,transparent 65%);pointer-events:none;}
+.final h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,52px);font-weight:600;color:var(--txt);margin-bottom:14px;position:relative;}
+.final h2 em{color:var(--gl);font-style:italic;}
+.final>p{font-size:16px;color:var(--muted);margin-bottom:36px;line-height:1.8;max-width:480px;margin-left:auto;margin-right:auto;position:relative;}
+.final-stats{display:flex;justify-content:center;gap:50px;flex-wrap:wrap;margin-top:48px;position:relative;}
+.f-s .n{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:700;color:var(--gl);}
+.f-s .l{font-size:10px;color:var(--muted);letter-spacing:3px;text-transform:uppercase;margin-top:3px;}
+
+/* ─── WA FLOAT ─── */
+.wa-fl{position:fixed;bottom:24px;right:24px;z-index:2000;width:58px;height:58px;background:linear-gradient(135deg,var(--wa2),var(--wa));border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;animation:wafl 2.2s ease-in-out infinite;}
+.wa-fl svg{width:28px;height:28px;fill:#fff;}
+.wa-fl-tip{position:absolute;right:68px;background:var(--bg3);color:var(--txt);font-size:12px;padding:8px 14px;border-radius:6px;white-space:nowrap;border:1px solid rgba(184,137,42,0.2);font-weight:500;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+.wa-fl:hover .wa-fl-tip{opacity:1;}
+@keyframes wafl{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,0.4);transform:scale(1)}50%{box-shadow:0 0 0 12px rgba(37,211,102,0);transform:scale(1.06)}}
+
+/* ─── FOOTER ─── */
+footer{background:var(--bg);border-top:1px solid rgba(184,137,42,0.08);padding:40px 20px;text-align:center;}
+.foot-ar{font-family:'Lateef',serif;font-size:24px;color:var(--g);display:block;margin-bottom:14px;opacity:0.75;}
+.foot-links{display:flex;justify-content:center;gap:24px;margin:14px 0;flex-wrap:wrap;}
+.foot-links a{color:rgba(245,240,232,0.5);text-decoration:none;font-size:13px;display:flex;align-items:center;gap:7px;transition:color 0.3s;}
+.foot-links a:hover{color:var(--gl);}
+.foot-links a svg{width:14px;height:14px;fill:currentColor;}
+footer p{font-size:11px;color:rgba(245,240,232,0.2);margin-top:12px;letter-spacing:0.5px;}
+
+/* ─── REVEAL ─── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s cubic-bezier(0.16,1,0.3,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal.delay1{transition-delay:0.1s;} .reveal.delay2{transition-delay:0.2s;} .reveal.delay3{transition-delay:0.3s;}
+
+@media(max-width:600px){
+  .lap-wrap{width:255px;height:185px;} .lap-s{width:232px;height:146px;} .lap-b{width:248px;}
+  .fq{display:none;} .trust-inner{gap:28px;}
+}
+</style>
+</head>
+<body>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/923085420423" class="wa-fl" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="wa-fl-tip">Chat on WhatsApp</span>
+</a>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="tk-track" id="ticker">
+    <span class="tk-item"><span class="tk-sep"></span>Limited Offer — 50% Off</span>
+    <span class="tk-item"><span class="tk-sep"></span>Complete Tajweed Course — PKR 2,500 Only</span>
+    <span class="tk-item"><span class="tk-sep"></span>3 Days Free Trial Available</span>
+    <span class="tk-item"><span class="tk-sep"></span>Beginner to Advanced — Learn at Your Pace</span>
+    <span class="tk-item"><span class="tk-sep"></span>Hifz · Tajweed · Qaida · Translation · Tafseer</span>
+    <span class="tk-item"><span class="tk-sep"></span>Enroll Now: +92 308 5420423</span>
+    <span class="tk-item"><span class="tk-sep"></span>Limited Offer — 50% Off</span>
+    <span class="tk-item"><span class="tk-sep"></span>Complete Tajweed Course — PKR 2,500 Only</span>
+    <span class="tk-item"><span class="tk-sep"></span>3 Days Free Trial Available</span>
+    <span class="tk-item"><span class="tk-sep"></span>Beginner to Advanced — Learn at Your Pace</span>
+    <span class="tk-item"><span class="tk-sep"></span>Hifz · Tajweed · Qaida · Translation · Tafseer</span>
+    <span class="tk-item"><span class="tk-sep"></span>Enroll Now: +92 308 5420423</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="h-geo"></div>
+  <div class="h-glow"></div>
+  <div id="sb"></div>
+  <!-- Quran floaters -->
+  <div class="fq fq1"><svg width="68" height="68" viewBox="0 0 68 68" fill="none"><rect x="7" y="5" width="52" height="58" rx="4" stroke="#B8892A" stroke-width="2"/><rect x="4" y="8" width="52" height="58" rx="4" fill="rgba(184,137,42,0.05)" stroke="#B8892A" stroke-width="1.3"/><line x1="14" y1="22" x2="48" y2="22" stroke="#B8892A" stroke-width="1.3" stroke-linecap="round"/><line x1="14" y1="31" x2="48" y2="31" stroke="#B8892A" stroke-width="1.3" stroke-linecap="round"/><line x1="14" y1="40" x2="40" y2="40" stroke="#B8892A" stroke-width="1.3" stroke-linecap="round"/><line x1="14" y1="49" x2="44" y2="49" stroke="#B8892A" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+  <div class="fq fq2"><svg width="68" height="68" viewBox="0 0 68 68" fill="none"><rect x="7" y="5" width="52" height="58" rx="4" stroke="#B8892A" stroke-width="2"/><rect x="4" y="8" width="52" height="58" rx="4" fill="rgba(184,137,42,0.05)" stroke="#B8892A" stroke-width="1.3"/><line x1="14" y1="22" x2="48" y2="22" stroke="#B8892A" stroke-width="1.3" stroke-linecap="round"/><line x1="14" y1="31" x2="48" y2="31" stroke="#B8892A" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+  <div class="fq fq3"><svg width="68" height="68" viewBox="0 0 68 68" fill="none"><rect x="7" y="5" width="52" height="58" rx="4" stroke="#B8892A" stroke-width="2"/><rect x="4" y="8" width="52" height="58" rx="4" fill="rgba(184,137,42,0.05)" stroke="#B8892A" stroke-width="1.3"/><line x1="14" y1="22" x2="48" y2="22" stroke="#B8892A" stroke-width="1.3" stroke-linecap="round"/><line x1="14" y1="31" x2="48" y2="31" stroke="#B8892A" stroke-width="1.3" stroke-linecap="round"/><line x1="14" y1="40" x2="40" y2="40" stroke="#B8892A" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+  <div class="fq fq4"><svg width="68" height="68" viewBox="0 0 68 68" fill="none"><rect x="7" y="5" width="52" height="58" rx="4" stroke="#B8892A" stroke-width="2"/><rect x="4" y="8" width="52" height="58" rx="4" fill="rgba(184,137,42,0.05)" stroke="#B8892A" stroke-width="1.3"/><line x1="14" y1="22" x2="48" y2="22" stroke="#B8892A" stroke-width="1.3" stroke-linecap="round"/><line x1="14" y1="31" x2="48" y2="31" stroke="#B8892A" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+
+  <svg class="mosque" viewBox="0 0 1400 140" preserveAspectRatio="xMidYMax meet"><path d="M0 140L0 105Q70 105 70 78Q70 48 105 30Q105 8 140 8Q175 8 175 30Q210 48 210 78Q210 105 280 105L280 140Z" fill="#B8892A"/><path d="M280 140L280 90Q370 90 370 60Q370 28 415 12Q460-4 505 12Q550 28 550 60Q550 90 640 90L640 140Z" fill="#B8892A"/><path d="M640 140L640 105Q710 105 710 78Q710 48 745 30Q745 8 780 8Q815 8 815 30Q850 48 850 78Q850 105 920 105L920 140Z" fill="#B8892A"/><path d="M920 140L920 90Q1010 90 1010 60Q1010 25 1060 10Q1110 25 1110 60Q1110 90 1200 90L1200 140Z" fill="#B8892A"/><path d="M1200 140L1200 105Q1270 105 1400 105L1400 140Z" fill="#B8892A"/></svg>
+
+  <div class="hero-wrap">
+    <div class="bism">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <div class="h-badge"><span></span>Recorded Online Course &mdash; Limited Offer</div>
+    <h1>
+      <span class="h1-sub">Learn</span>
+      <span class="h1-main">Quran Tajweed</span>
+      <span class="h1-tag">Easily at Home</span>
+    </h1>
+    <p class="hero-desc">Master the rules of Quranic recitation with a structured, step-by-step curriculum. From complete beginner to advanced Tajweed — at your own pace, on your own schedule.</p>
+
+    <div class="lap-wrap">
+      <div class="lap">
+        <div class="lap-s">
+          <div class="lap-inner">
+            <span class="lap-icon">📖</span>
+            <div class="play-ring"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="lap-b"></div>
+      </div>
+      <div class="tas">📿</div>
+    </div>
+
+    <div class="price-row">
+      <span class="p-old">PKR 5,000</span>
+      <span class="p-new">PKR 2,500</span>
+      <span class="p-tag">50% Off</span>
+    </div>
+
+    <div class="cta-row">
+      <a href="https://wa.me/923085420423?text=Assalamualaikum!%20I%20want%20to%20Buy%20the%20Quran%20Tajweed%20Course%20for%20PKR%202500.%20Please%20share%20payment%20details." class="btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Buy Now — PKR 2,500
+      </a>
+      <a href="admission.html" class="btn-outline">
+        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Academy Admissions
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar reveal">
+  <div class="trust-inner">
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><div><strong>500+</strong><span>Students Enrolled</span></div></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><div><strong>4.9 / 5</strong><span>Average Rating</span></div></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div><strong>Self-Paced</strong><span>Learn Anytime</span></div></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><div><strong>Certificate</strong><span>On Completion</span></div></div>
+  </div>
+</div>
+
+<!-- COUNTDOWN -->
+<div class="cd">
+  <div class="cd-label">⏳ &nbsp; Special Offer Expires In</div>
+  <div class="cd-boxes">
+    <div class="cd-box"><span class="cd-n" id="days">00</span><div class="cd-l">Days</div></div>
+    <div class="cd-box"><span class="cd-n" id="hours">00</span><div class="cd-l">Hours</div></div>
+    <div class="cd-box"><span class="cd-n" id="mins">00</span><div class="cd-l">Minutes</div></div>
+    <div class="cd-box"><span class="cd-n" id="secs">00</span><div class="cd-l">Seconds</div></div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="sec why">
+  <div class="sec-hd reveal">
+    <h2>Why Thousands Choose <em>This Course</em></h2>
+    <div class="divider"></div>
+    <p>Everything you need to recite the Quran with confidence, beauty, and correctness</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal delay1"><div class="wi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Learn at Your Own Pace</h3><p>Lifetime access to all recorded lectures. No fixed timing — study when it suits you, replay as many times as you need.</p></div>
+    <div class="why-card reveal delay2"><div class="wi"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Structured, Proven Curriculum</h3><p>Step-by-step progression from complete beginner to advanced Tajweed. Every rule explained clearly before moving forward.</p></div>
+    <div class="why-card reveal delay3"><div class="wi"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><h3>Complete Tajweed Rules</h3><p>Makharij, Ghunna, Madd, Qalqala, Idgham, Ikhfa, Waqf — all rules with audio examples and practice exercises.</p></div>
+    <div class="why-card reveal delay1"><div class="wi"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><h3>Professional Video Lectures</h3><p>Clear, concise, high-quality video lessons. Simple language, practical demonstrations, instant replay.</p></div>
+    <div class="why-card reveal delay2"><div class="wi"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div><h3>Verified Certificate</h3><p>Receive a digital certificate of completion — recognized, shareable, and a testament to your achievement.</p></div>
+    <div class="why-card reveal delay3"><div class="wi"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Dedicated WhatsApp Support</h3><p>Direct access to instructors via WhatsApp. Ask questions, get guidance, never feel stuck in your journey.</p></div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="sec courses">
+  <div class="sec-hd reveal">
+    <h2>The Complete <em>Tajweed Course</em></h2>
+    <div class="divider"></div>
+    <p>One complete recorded course — everything you need to recite the Quran with perfect Tajweed</p>
+  </div>
+  <div style="max-width:780px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;">
+
+    <!-- Left: Course Details -->
+    <div class="course-card reveal" style="grid-column:span 1;">
+      <div class="cc-top">
+        <div class="cc-badge paid">★ Complete Course — Recorded</div>
+        <span class="cc-icon">📖</span>
+        <h3>Quran Tajweed Mastery</h3>
+      </div>
+      <p>A fully recorded, self-paced Tajweed course. Buy once, access forever. Learn at your own time, at your own pace.</p>
+      <ul class="cc-list">
+        <li>Makharij Al-Huroof — letter pronunciation</li>
+        <li>Noon Sakin, Tanween & Meem Sakin rules</li>
+        <li>Madd — all elongation types</li>
+        <li>Ghunna, Qalqala, Tafkheem & Tarqeeq</li>
+        <li>Waqf & Ibtida — stopping rules</li>
+        <li>40+ video lessons — lifetime access</li>
+        <li>WhatsApp support included</li>
+        <li>Certificate of completion</li>
+      </ul>
+      <div class="cc-foot">
+        <div class="cc-price">
+          <span class="old">PKR 5,000</span>
+          <span class="new">PKR 2,500</span>
+        </div>
+        <a href="https://wa.me/923085420423?text=Assalamualaikum!%20I%20want%20to%20buy%20the%20Complete%20Tajweed%20Course%20for%20PKR%202500.%20Please%20share%20payment%20details." class="cc-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Buy Now — PKR 2,500
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: What you get + How it works -->
+    <div class="reveal d1" style="display:flex;flex-direction:column;gap:18px;">
+      <div style="background:var(--bg3);border:1px solid rgba(184,137,42,0.12);border-radius:12px;padding:26px;">
+        <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--g);font-weight:600;margin-bottom:16px;">What You Get</div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;gap:12px;align-items:center;"><div style="width:36px;height:36px;background:linear-gradient(135deg,var(--gd),var(--g));border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">🎬</div><div><div style="font-size:14px;font-weight:600;color:var(--txt);">40+ Recorded Lessons</div><div style="font-size:12px;color:var(--muted);">Watch anytime, replay unlimited</div></div></div>
+          <div style="display:flex;gap:12px;align-items:center;"><div style="width:36px;height:36px;background:linear-gradient(135deg,var(--gd),var(--g));border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">♾️</div><div><div style="font-size:14px;font-weight:600;color:var(--txt);">Lifetime Access</div><div style="font-size:12px;color:var(--muted);">Buy once, yours forever</div></div></div>
+          <div style="display:flex;gap:12px;align-items:center;"><div style="width:36px;height:36px;background:linear-gradient(135deg,var(--gd),var(--g));border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">🏆</div><div><div style="font-size:14px;font-weight:600;color:var(--txt);">Certificate</div><div style="font-size:12px;color:var(--muted);">On course completion</div></div></div>
+          <div style="display:flex;gap:12px;align-items:center;"><div style="width:36px;height:36px;background:linear-gradient(135deg,var(--gd),var(--g));border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">💬</div><div><div style="font-size:14px;font-weight:600;color:var(--txt);">WhatsApp Support</div><div style="font-size:12px;color:var(--muted);">Ask anytime, we respond fast</div></div></div>
+        </div>
+      </div>
+      <div style="background:var(--bg3);border:1px solid rgba(184,137,42,0.12);border-radius:12px;padding:26px;">
+        <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--g);font-weight:600;margin-bottom:16px;">How It Works</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);"><span style="color:var(--gl);font-weight:700;font-size:15px;flex-shrink:0;">01</span><span>Click <strong style="color:var(--txt)">Buy Now</strong> and send us a WhatsApp message</span></div>
+          <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);"><span style="color:var(--gl);font-weight:700;font-size:15px;flex-shrink:0;">02</span><span>Pay via <strong style="color:var(--txt)">JazzCash / EasyPaisa</strong> — PKR 2,500</span></div>
+          <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);"><span style="color:var(--gl);font-weight:700;font-size:15px;flex-shrink:0;">03</span><span>Receive <strong style="color:var(--txt)">instant access</strong> to all video lessons</span></div>
+          <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);"><span style="color:var(--gl);font-weight:700;font-size:15px;flex-shrink:0;">04</span><span>Learn at your own pace, <strong style="color:var(--txt)">anytime, anywhere</strong></span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- URDU SECTION -->
+<section class="sec urdu-sec">
+  <div class="urdu-grid">
+    <div class="urdu-col reveal">
+      <h2 class="urdu-h">قرآن تجوید کورس — آپ کے گھر تک علم</h2>
+      <ul class="urdu-list">
+        <li>ریکارڈڈ ویڈیو لیکچرز — کسی بھی وقت دیکھیں</li>
+        <li>ابتدا سے اعلیٰ درجے تک مکمل نصاب</li>
+        <li>مخارج الحروف کی مکمل تربیت</li>
+        <li>تجوید کے تمام قواعد آسان انداز میں</li>
+        <li>وقف و ابتدا کے اصول سیکھیں</li>
+        <li>واٹس ایپ پر براہِ راست رہنمائی</li>
+        <li>کورس مکمل کرنے پر سرٹیفیکیٹ</li>
+      </ul>
+      <a href="https://wa.me/923085420423?text=السلام علیکم! مجھے قرآن تجوید کورس میں داخلہ چاہیے۔" class="urdu-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        ابھی Buy Now کریں — صرف PKR 2500
+      </a>
+    </div>
+    <div class="acad-side reveal delay2">
+      <div class="acad-card">
+        <div class="acad-top">
+          <div class="acad-ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div><div class="acad-name">Al-Noor Quran Academy<span>Online Islamic Institute</span></div></div>
+        </div>
+        <div class="acad-stats">
+          <div class="a-s"><div class="n">500+</div><div class="l">Students</div></div>
+          <div class="a-s"><div class="n">4.9★</div><div class="l">Rating</div></div>
+          <div class="a-s"><div class="n">5+</div><div class="l">Years</div></div>
+          <div class="a-s"><div class="n">100%</div><div class="l">Satisfaction</div></div>
+        </div>
+        <p class="acad-desc">ہماری اکیڈمی میں تجوید، حفظ، ترجمہ اور تفسیر سمیت تمام قرآنی علوم پڑھائے جاتے ہیں۔</p>
+        <a href="admission.html" class="acad-link">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          View Academy & Admissions →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec testi">
+  <div class="sec-hd reveal">
+    <h2>What Our <em>Students Say</em></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="testi-grid">
+    <div class="t-card reveal"><span class="t-q">"</span><span class="t-stars">★★★★★</span><p>Alhamdulillah — the way Tajweed rules are explained is unlike anything I found elsewhere. Clear, step-by-step, and incredibly effective. My recitation improved within the first week.</p><div class="t-auth"><div class="t-av">🧔</div><div><div class="t-name">Ahmed K.</div><div class="t-loc">Karachi, Pakistan</div></div></div></div>
+    <div class="t-card reveal delay1"><span class="t-q">"</span><span class="t-stars">★★★★★</span><p>The recorded format is perfect for our family. My children and I watch together after Isha — we can pause, replay, and practice together. Best investment we made for our Deen.</p><div class="t-auth"><div class="t-av">🧕</div><div><div class="t-name">Fatima R.</div><div class="t-loc">Lahore, Pakistan</div></div></div></div>
+    <div class="t-card reveal delay2"><span class="t-q">"</span><span class="t-stars">★★★★★</span><p>I enrolled for my mother at age 55 — she completed the full course and can now recite with proper Tajweed. The WhatsApp support was exceptional throughout. Truly life-changing.</p><div class="t-auth"><div class="t-av">👩</div><div><div class="t-name">Maryam S.</div><div class="t-loc">Islamabad, Pakistan</div></div></div></div>
+  </div>
+</section>
+
+<!-- ACADEMY BANNER -->
+<section style="padding:70px 20px;background:var(--bg2);border-top:1px solid rgba(184,137,42,0.08);">
+  <div style="max-width:900px;margin:0 auto;">
+    <div class="reveal" style="background:linear-gradient(135deg,rgba(10,24,48,0.95),rgba(15,32,64,0.9));border:1px solid rgba(184,137,42,0.18);border-radius:16px;padding:48px 44px;display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center;position:relative;overflow:hidden;">
+      <!-- Gold top line -->
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--g),transparent);"></div>
+      <!-- Gold circle glow -->
+      <div style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(184,137,42,0.06),transparent);pointer-events:none;"></div>
+
+      <div style="position:relative;z-index:1;">
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--g);font-weight:600;margin-bottom:12px;">Al-Noor Quran Academy</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.5vw,34px);font-weight:600;color:var(--txt);margin-bottom:12px;line-height:1.25;">Want Live Classes? <span style="background:linear-gradient(135deg,var(--gl),var(--g));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:italic;">Join Our Academy</span></h2>
+        <p style="font-size:14px;color:var(--muted);line-height:1.75;max-width:480px;margin-bottom:20px;">For students who want live instruction, personal feedback, and structured classes — our Online Quran Academy offers Qaida, Naazra, Hifz, Kalma, Dua & Namaz programs for all ages.</p>
+        <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--muted);">
+          <span style="display:flex;align-items:center;gap:6px;"><span style="width:5px;height:5px;background:var(--g);border-radius:50%;display:inline-block;"></span>Basic Qaida & Naazra</span>
+          <span style="display:flex;align-items:center;gap:6px;"><span style="width:5px;height:5px;background:var(--g);border-radius:50%;display:inline-block;"></span>Hifz Program</span>
+          <span style="display:flex;align-items:center;gap:6px;"><span style="width:5px;height:5px;background:var(--g);border-radius:50%;display:inline-block;"></span>Kalma, Dua & Namaz</span>
+          <span style="display:flex;align-items:center;gap:6px;"><span style="width:5px;height:5px;background:var(--g);border-radius:50%;display:inline-block;"></span>All ages welcome</span>
+        </div>
+      </div>
+      <div style="position:relative;z-index:1;flex-shrink:0;">
+        <a href="admission.html" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gd),var(--g));color:#040C18;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;padding:16px 30px;border-radius:8px;text-decoration:none;white-space:nowrap;letter-spacing:0.3px;transition:all 0.3s;box-shadow:0 4px 20px rgba(184,137,42,0.25);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#040C18" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          View Academy →
+        </a>
+        <div style="text-align:center;margin-top:10px;font-size:11px;color:var(--muted);">Admissions Open</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final reveal">
+  <h2>Start Reciting the Quran<br><em>Beautifully Today</em></h2>
+  <p>Limited-time offer — 50% off the complete Tajweed course. Join 500+ students who have transformed their recitation.</p>
+  <div style="margin-bottom:28px;">
+    <div style="font-size:13px;color:rgba(245,240,232,0.3);text-decoration:line-through;margin-bottom:6px;">Original Price: PKR 5,000</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,56px);font-weight:700;background:linear-gradient(135deg,var(--gl),var(--g));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">PKR 2,500 Only</div>
+  </div>
+  <div class="cta-row" style="opacity:1;animation:none;">
+    <a href="https://wa.me/923085420423?text=Assalamualaikum!%20I%20want%20to%20Buy%20the%20Quran%20Tajweed%20Course%20for%20PKR%202500." class="btn-primary" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Buy Now — PKR 2,500
+    </a>
+    <a href="admission.html" class="btn-outline">Academy Admissions →</a>
+  </div>
+  <div class="final-stats">
+    <div class="f-s"><div class="n">500+</div><div class="l">Students</div></div>
+    <div class="f-s"><div class="n">4.9★</div><div class="l">Rating</div></div>
+    <div class="f-s"><div class="n">100%</div><div class="l">Satisfaction</div></div>
+    <div class="f-s"><div class="n">5+</div><div class="l">Years</div></div>
+  </div>
+</section>
+
+<footer>
+  <span class="foot-ar">جَزَاكَ اللَّهُ خَيْرًا</span>
+  <div class="foot-links">
+    <a href="https://wa.me/923085420423" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a>
+    <a href="tel:+923085420423"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.45 2 2 0 0 1 3.59 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.4a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+92 308 5420423</a>
+    <a href="admission.html">Academy Admissions</a>
+  </div>
+  <p>© 2025 Al-Noor Quran Academy · All Rights Reserved · Made for the Ummah</p>
+</footer>
+
+<script>
+// Stars
+const sb=document.getElementById('sb');
+for(let i=0;i<55;i++){const s=document.createElement('div');s.className='star-dot';const z=Math.random()*2.2+0.6;s.style.cssText=`width:${z}px;height:${z}px;top:${Math.random()*100}%;left:${Math.random()*100}%;animation-delay:${Math.random()*6}s;animation-duration:${2.5+Math.random()*4}s;`;sb.appendChild(s);}
+
+// Ticker duplicate
+const t=document.getElementById('ticker');t.innerHTML+=t.innerHTML;
+
+// Countdown auto-reset
+const K='qcd2';
+function getEnd(){let s=localStorage.getItem(K);if(s){const t=parseInt(s);if(t>Date.now())return new Date(t);}const f=new Date();f.setDate(f.getDate()+3);f.setHours(23,59,59,0);localStorage.setItem(K,f.getTime());return f;}
+let et=getEnd();
+function cd(){let d=et-new Date();if(d<=0){localStorage.removeItem(K);et=getEnd();d=et-new Date();}
+  const dy=Math.floor(d/86400000),h=Math.floor((d%86400000)/3600000),m=Math.floor((d%3600000)/60000),s=Math.floor((d%60000)/1000);
+  document.getElementById('days').textContent=String(dy).padStart(2,'0');
+  document.getElementById('hours').textContent=String(h).padStart(2,'0');
+  document.getElementById('mins').textContent=String(m).padStart(2,'0');
+  document.getElementById('secs').textContent=String(s).padStart(2,'0');}
+cd();setInterval(cd,1000);
+
+// Reveal
+const obs=new IntersectionObserver(e=>{e.forEach((en,i)=>{if(en.isIntersecting)setTimeout(()=>en.target.classList.add('in'),i*70);});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
